@@ -21,10 +21,10 @@ var notify = new function (){
               
             });
 
-            console.log(curNum);
+            
         }
     });
-
+    console.log(curNum);
     counter += 1;
   }
 
