@@ -6,12 +6,18 @@ var counter = 0;
 var notify = new function (){
   while(counter < 250){
     page.open("https://www.rev.com/workspace/findwork/transcription", function(){
-        curNum = myRegex.exec(document.getElementByClass('num-active-rows').textContent);
-        if(curNum > prevNum)
-            //output sound
-        prevNum = curNum;
-        counter += 1;
-        phantom.exit();
+        if (status !== 'success') {
+          console.log('Unable to access network');
+        } else {
+            curNum = webpage.evaluate(function(){
+              myRegex.exec(document.getElementByClass('num-active-rows').textContent);
+              if(curNum > prevNum)
+              //output sound
+              prevNum = curNum;
+              counter += 1;
+              phantom.exit();
+            });
+        }
     });
   }
 }
