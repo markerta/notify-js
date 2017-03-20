@@ -1,7 +1,7 @@
 var page = require('webpage').create();
 var prevNum = 0;
 var curNum = 0;
-var myRegex = new Regex('[0-9]?[0-9]?[0-9]');
+var myRegex = '/[0-9]?[0-9]?[0-9]/';
 var counter = 0;
 var notify = new function (){
   while(counter < 250){
