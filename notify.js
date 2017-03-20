@@ -6,7 +6,7 @@ var counter = 0;
 var notify = new function (){
   while(counter < 250){
     page.open("https://www.rev.com/workspace/findwork/transcription", function(){
-        curNum = myRegex.exec(document.getElementByClass('').textContent);
+        curNum = myRegex.exec(document.getElementByClass('num-active-rows').textContent);
         if(curNum > prevNum)
             //output sound
         prevNum = curNum;
