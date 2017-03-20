@@ -4,7 +4,6 @@ var curNum = 0;
 var myRegex = RegExp('[0-9]?[0-9]?[0-9]');
 var counter = 0;
 
-console.log("Setuo complete");
 var notify = new function (){
   while(counter < 2){
     console.log('open site');
@@ -12,17 +11,13 @@ var notify = new function (){
         if (status !== 'success') {
           console.log('Unable to access network');
         } else {
-            curNum = webpage.evaluate(function(){
-              myRegex.exec(document.getElementByClass('num-active-rows').textContent);
-              if(curNum > prevNum)
-              //output sound
-              prevNum = curNum;
-              
-              
-            });
-
-            
+            curNum = myRegex.exec(document.getElementByClass('num-active-rows').textContent);
         }
+
+        if(curNum > prevNum)
+        //output sound
+        prevNum = curNum;
+              
     });
     console.log(curNum);
     counter += 1;
