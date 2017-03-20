@@ -20,6 +20,8 @@ var notify = new function (){
               
               
             });
+
+            console.log(curNum);
         }
     });
 
